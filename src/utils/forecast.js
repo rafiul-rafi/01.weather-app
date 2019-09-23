@@ -9,7 +9,8 @@ forecast  = (latitude, longitude, callback)=>{
         }else if(response.body.error){
             callback('unable to connect, please search again')
         }else{
-            callback(undefined,response.body.daily.data[0].summary+'  it is currently '+ response.body.currently.temperature+'  degree out there. and there is '+response.body.currently.precipProbability+' % probablity of rain')
+            callback(undefined,response.body.daily.data[0].summary+'  it is currently '+ response.body.currently.temperature+'  degree out there. and there is '+response.body.currently.precipProbability+' % probablity of rain'+
+            'Highest Temperature is : '+response.body.daily.data[0].temperatureHigh+' and lowest temperature is : '+response.body.daily.data[0].temperatureLow)
         }
     })
 }
